@@ -1,6 +1,6 @@
-#Automatic Server Backup Scripts
+#Automatic Backup Scripts
 
-These are automatically server backup scripts.
+These are automatically backup scripts.
 
 ## Table of Contents
 [1. Development](#1-development)  
@@ -15,5 +15,5 @@ These are automatically server backup scripts.
 Special thanks to bloggers who inspired.
 
 ## 3. License
-Copyright &copy; 2013 Kaoru Ishikura.  
+Copyright &copy; 2014 Kaoru Ishikura.  
 Released under the [MIT license](https://github.com/kaorinstar/automatic-server-backup-scripts/blob/master/LICENSE).

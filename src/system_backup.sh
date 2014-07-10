@@ -1,17 +1,19 @@
 #!/bin/sh
-# Automatic Server Backup Scripts.
+# Automatic Backup Scripts.
 #
 # Change to permission 705 on this file.
-# cron 0 4 * * 1 /bin/sh -f /path/to/server_backup.sh >/dev/null 2>&1
+# cron 0 4 * * 1 /bin/sh -f /path/to/system_backup.sh >/dev/null 2>&1
 #
-# Copyright 2013, Kaoru Ishikura
+# Copyright 2014, Kaoru Ishikura
 # Released under the MIT license.
 # http://opensource.org/licenses/mit-license.php
 
 # Project environment variables.
 ##################################################
+# Specifies the path to the base directory of the system.
+BASE_DIR="${HOME}"
 # Specifies the path to the backup directory.
-BACKUP_DIR="${HOME}/backup/server"
+BACKUP_DIR="${HOME}/path/to/backups/system"
 # Specifies the retention period for backups.
 RETENTION_PERIOD=21
 # Specifies the maximum capacity.
@@ -71,7 +73,7 @@ if [ $? -eq 0 -a -n "${INCLUDE_PATHS}" ]; then
 
     #
     # Compress specified directories into the gzip file.
-    tar -C ~ ${EXCLUDES} -cpzf - ${INCLUDES} | \
+    tar -C ${BASE_DIR} ${EXCLUDES} -cpzf - ${INCLUDES} | \
     split -b ${MAX_CAPACITY} - "${TODAYS_DATE_DIR}/server-${USER}-${TODAYS_DATE}.tar.gz.part-"
 
     if [ $? -eq 0 ]; then

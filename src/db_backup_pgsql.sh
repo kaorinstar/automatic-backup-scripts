@@ -1,18 +1,18 @@
 #!/bin/sh
-# Automatic Server Backup Scripts.
+# Automatic Backup Scripts.
 #
 # Change to permission 705 on this file.
 # The .pgpass file must be set in user home directory with change to permission 600.
-# cron 30 2 * * * /bin/sh -f /home/user_name/scripts/database_backup.sh >/dev/null 2>&1
+# cron 30 2 * * * /bin/sh -f /path/to/db_backup_pgsql.sh >/dev/null 2>&1
 #
-# Copyright 2013, Kaoru Ishikura
+# Copyright 2014, Kaoru Ishikura
 # Released under the MIT license.
 # http://opensource.org/licenses/mit-license.php
 
 # Project environment variables.
 ##################################################
 # Specifies the path to the backup directory.
-BACKUP_DIR="${HOME}/backup/db"
+BACKUP_DIR="${HOME}/path/to/backups/db"
 # Specifies the retention period for backups.
 RETENTION_PERIOD=21
 ##################################################
